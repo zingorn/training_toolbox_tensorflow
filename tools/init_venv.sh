@@ -8,7 +8,7 @@ if [ -e venv ]; then
   exit
 fi
 
-virtualenv venv -p python3
+virtualenv venv -p python3 --prompt="(tf-toolbox) "
 . venv/bin/activate
 pip install -r requirements.txt
 cd external/cocoapi
@@ -16,7 +16,7 @@ cd external/cocoapi
 cd PythonAPI
 make install
 
-# install OpenVino Model Optimizer (optional)
+# Install OpenVino Model Optimizer (optional)
 mo_requirements_file="${INTEL_CVSDK_DIR}/deployment_tools/model_optimizer/requirements_tf.txt"
 if [ -e "${mo_requirements_file}" ]; then
   pip install -r ${mo_requirements_file}
