@@ -1,0 +1,28 @@
+language: python
+sudo: required
+dist: xenial
+
+python:
+  - 3.6
+
+env:
+  global:
+    # Note: you have to update a download link in .travis/install.sh
+    - OPENVINO_VERSION=2018.3.343
+    - OPEN_VINO_DIR=/opt/intel/computer_vision_sdk
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+    - /opt/intel
+
+install:
+  - sudo apt-get install libturbojpeg python3-tk
+  - bash .travis/install.sh
+
+script:
+  - . $OPEN_VINO_DIR/bin/setupvars.sh
+  - sh tools/init_venv.sh
+  - . venv/bin/activate
+  - cd training_toolbox
+  - nosetests
