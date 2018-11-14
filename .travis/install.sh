@@ -11,7 +11,7 @@ tar -xf $HOME/openvino.tgz -C $HOME
 
 echo "Installing the OpenVino dependencies..."
 cd $HOME/l_openvino_toolkit_p_${OPENVINO_VERSION}
-./install_cv_sdk_dependencies.sh
+sudo -E ./install_cv_sdk_dependencies.sh
 sed -i 's/ACCEPT_EULA=.*/ACCEPT_EULA=accept/' silent.cfg
 
 echo "Installing the OpenVino toolkit..."
