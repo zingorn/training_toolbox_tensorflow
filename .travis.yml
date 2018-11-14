@@ -7,8 +7,10 @@ python:
 
 env:
   global:
-    # Note: you have to update a download link in .travis/install.sh
-    - OPENVINO_VERSION=2018.3.343
+    # Note: You have to update both of OPENVINO_VERSION and OPENVINO_DOWNLOAD_ID
+    #       to have a valid download link
+    - OPENVINO_VERSION=2018.4.420
+    - OPENVINO_DOWNLOAD_ID=14920
     - OPEN_VINO_DIR=/opt/intel/computer_vision_sdk
 
 cache:
