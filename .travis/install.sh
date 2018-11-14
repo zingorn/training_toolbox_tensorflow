@@ -15,5 +15,5 @@ sudo -E ./install_cv_sdk_dependencies.sh
 sed -i 's/ACCEPT_EULA=.*/ACCEPT_EULA=accept/' silent.cfg
 
 echo "Installing the OpenVino toolkit..."
-sh ./install.sh -s silent.cfg
+sudo -E ./install.sh -s silent.cfg
 
